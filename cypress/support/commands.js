@@ -23,3 +23,11 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('fillField', (element, input) => {
+    cy.get(element).type(input)
+})
+
+Cypress.Commands.add('checkFormFieldValue', (element, expectedContent) => {
+    cy.get(element).should('have.value', expectedContent)
+})
