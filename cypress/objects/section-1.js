@@ -23,7 +23,8 @@ const Section1 = {
         age: '[data-test=age-input]',
         gender: '[data-test=gender-select]',
         nurseCheck: '[data-test=nurse-input]'
-      }
+      },
+      btnSubmit: '[data-test=submit-btn]'
     },
     elTable: { 
       main: '[data-test=user-table]',
@@ -34,7 +35,7 @@ const Section1 = {
         lastName: '[data-test=user-table] >>> :nth-child(3)',
         dateOfBirth: '[data-test=user-table] >>> :nth-child(4)',
         role: '[data-test=user-table] >>> :nth-child(5)'
-      }
+      },
     },
   },
 
@@ -155,7 +156,7 @@ const Section1 = {
       const stub = cy.stub()
       cy.on('window:alert', stub)
 
-      cy.get('[data-test=submit-btn]')
+      cy.get(Section1.elements.elForm.btnSubmit)
         .click()
         .then(() => {
           expect(stub.getCall(0)).to.be.calledWith(message)
