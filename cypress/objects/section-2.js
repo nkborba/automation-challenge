@@ -48,6 +48,7 @@ const Section2 = {
     checkDownloadButton() {
       cy.get(Section2.elements.btnDownload)
         .should('have.attr', 'download', 'true')
+        .and('not.have.attr', 'target')
     },
 
     checkDownloadedFile(downloadResponse) {
