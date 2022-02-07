@@ -68,7 +68,7 @@ context('Section 2', () => {
       Section2.actions.checkDownloadButton()
     })
 
-    it('downloaded file matchs the integrity of the original file', () => {
+    it('BONUS: downloaded file matchs the original file', () => {
       Section2.actions.checkDownloadedFile(downloadResponse)
     })
 
